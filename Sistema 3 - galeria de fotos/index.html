@@ -10,30 +10,175 @@
     <h1>Galeria de fotos</h1>
 
 <section class="galeria" id="galeria">
-    <!-- CADA <ARTICLE> É UM CARTÃO DE FOTO -->
+
     <article class="cartao-foto">
-        <img src="8dfa02a24128eebd81f772953c5e34c5.jpg" alt="descrição rápida" />
+        <img src="img/img1.jpg" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+            
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 
     <article class="cartao-foto">
-        <img src="4ab8978d92694846e819e90e70166e79.jpg" alt="descrição rápida" />
+        <img src="img/imag10.png" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+           
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 
     <article class="cartao-foto">
-        <img src="2f88b1b8adf4b733f3a6c988cd6e171c.jpg" alt="descrição rápida" />
+        <img src="img/img3.jpg" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+           
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 
     <article class="cartao-foto">
-        <img src="a37ddc714125a3136d66ff9687bf75c2" alt="descrição rápida" />
+        <img src="img/img4.jpg" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+           
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 
     <article class="cartao-foto">
-        <img src="download.png" alt="descrição rápida" />
+        <img src="img/img5.jpg" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+            
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 
     <article class="cartao-foto">
-        <img src="84c8c79ebb851642c8e24fd4eb2658f2.jpg" alt="descrição rápida" />
+        <img src="img/img12.jpg" alt="descrição rápida" />
+        <div class="acoes">
+            <div class="grupo-curtir">
+                <button class="botao-curtir">🧡</button>
+                <span class="contador-curtidas">0</span>
+            </div>
+            <div class="grupo-comentario">
+                <button class="botao-comentarios">💬</button>
+                <span class="contador-comentarios">0</span>
+
+            </div>
+            
+        </div>
+        <div class="secao-comentarios">
+            <input type="text" class="entrada-comentario" placeholder="Adicionar comentário...">
+            <button class="botao-adicionar-comentario" >Comentar</button>
+            <ul class="lista-comentarios"></ul>
+        </div>
     </article>
 </section>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const cartoes = document.querySelectorAll(".cartao-foto");
+
+    cartoes.forEach((cartao) => {
+        const botaoCurtir = cartao.querySelector(".botao-curtir");
+        const contadorCurtidas = cartao.querySelector(".contador-curtidas");
+        const botaoComentarios = cartao.querySelector(".botao-comentarios");
+        const contadorComentarios = cartao.querySelector(".contador-comentarios");
+        const secaoComentarios = cartao.querySelector(".secao-comentarios");
+        const botaoAdicionarComentario = cartao.querySelector(".botao-adicionar-comentario");
+        const listaComentarios = cartao.querySelector(".lista-comentarios");
+        const entradaComentario = cartao.querySelector(".entrada-comentario"); // <- Adicionado
+
+        let totalCurtidas = 0;
+        let totalcomentarios = 0;
+
+        botaoCurtir.addEventListener("click", () => {
+            totalCurtidas++;
+            contadorCurtidas.textContent = totalCurtidas;
+            botaoCurtir.classList.add("curtido");
+            setTimeout(() => botaoCurtir.classList.remove("curtido"), 300);
+        });
+
+        botaoComentarios.addEventListener("click", () => {
+            secaoComentarios.classList.toggle("ativa");
+        });
+
+        botaoAdicionarComentario.addEventListener("click", () => {
+            const texto = entradaComentario.value.trim();
+            if (texto) {
+                const li = document.createElement("li");
+                li.textContent = texto;
+                listaComentarios.appendChild(li);
+                entradaComentario.value = "";
+
+                totalcomentarios++;
+                contadorComentarios.textContent = totalcomentarios;
+            }
+        });
+    });
+});
+</script>
 </html>

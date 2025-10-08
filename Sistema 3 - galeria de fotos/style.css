@@ -1,16 +1,14 @@
-/* RESET BÁSICO */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ESTILO GERAL DA PÁGINA */
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background-color: rgb(192, 209, 217);
     padding: 20px;
-    color: #333;
+    color: rgb(93, 93, 96);
 }
 
 h1 {
@@ -18,7 +16,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* GRADE DA GALERIA */
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,22 +24,116 @@ h1 {
     margin: 0 auto;
 }
 
-/* CARTÃO DE CADA FOTO */
 .cartao-foto {
-    background: #fff;
+    background-color: rgb(196, 194, 197);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease;
 }
 
-.cartao-foto:hover {
-    transform: translateY(-5px); /* Leve efeito ao passar o mouse */
+.cartao-foto :hover {
+    transform: translateY(-5px);
 }
 
 .cartao-foto img {
     width: 100%;
+    height: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 10px 10px 0 0;
     display: block;
+
+
+}
+
+.cartao-foto span {
+    color: black;
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1px solid #f5f5f5;
+    gap: 20px;
+}
+
+.grupo-curtir,
+.grupo-comentario {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.acoes button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.acoes button:houver {
+    transform: scale(1.2);
+}
+
+.botao-curtir.curtido {
+    color: rgb(255, 255, 255);
+}
+
+.secao-comentarios {
+    display: none;
+    flex-direction: column;
+    padding: 0 16px 16px;
+    border-top: 1px solid white;
+}
+
+.secao-comentarios {
+    display: flex;
+}
+
+.entrada-comentario {
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #c4dce2;
+    border-radius: 5px;
+}
+
+.botao-adicionar-comentario {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #161d29;
+    color: #818181;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    user-select: none;
+}
+
+.botao-adicionar-comentario:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+.lista-comentarios {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.lista-comentarios li {
+    background: #b3b9c2;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+}
+
+.contador-curtidas,
+.contador-comentarios {
+    font-size: 14px;
+    user-select: none;
 }
